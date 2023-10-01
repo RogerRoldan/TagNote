@@ -1,5 +1,5 @@
 # TAGNOTE
-
+![Logo de mi proyecto](img/logo.png)
 ## Descripción
 
 TagNote es una aplicación de gestión de notas diseñada para hacer que tomar, organizar y encontrar notas sea más eficiente y efectivo que nunca. Con una interfaz sencilla y poderosas características, TagNote simplifica la toma de notas y la organización de la información importante en tu vida cotidiana.
