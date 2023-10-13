@@ -1,19 +1,13 @@
-# TAGNOTE
+# WORKHUB
 
 ## Descripción
-
-TagNote es una aplicación de gestión de notas diseñada para hacer que tomar, organizar y encontrar notas sea más eficiente y efectivo que nunca. Con una interfaz sencilla y poderosas características, TagNote simplifica la toma de notas y la organización de la información importante en tu vida cotidiana.
+TaskWave es una aplicación de colaboración en grupo diseñada para simplificar la gestión de tareas y mejorar la comunicación entre miembros de equipos. Con TaskWave, los usuarios pueden crear grupos de trabajo, asignar tareas, y comunicarse a través de un chat grupal en tiempo real. La aplicación combina eficazmente la funcionalidad de un tablero de tareas con un chat grupal para proporcionar a los equipos una plataforma integral de colaboración.
 
 ## Características Clave
+- **Gestión de Grupos:** Los usuarios pueden crear y unirse a grupos de trabajo, asignar roles y colaborar de manera efectiva.
+- **Gestión de Tareas:** Crea, asigna y sigue el progreso de tareas con información detallada como fechas de vencimiento y estado.
+- **Tablero de Tareas:** Visualiza todas las tareas en un tablero y filtra tareas asignadas a ti.
+- **Chat Grupal en Tiempo Real:** Comunica ideas, comparte archivos y resuelve problemas en el chat grupal integrado.
+- **Notificaciones en Tiempo Real:** Mantente al tanto de tareas nuevas y mensajes en el chat con notificaciones instantáneas.
 
-- **Toma de Notas Intuitivas:** TagNote permite crear y editar notas de manera rápida y sencilla. Escribe ideas, pensamientos y recordatorios con facilidad.
-
-- **Categorización Flexible:** Cada nota puede ser etiquetada con una o varias categorías, lo que permite organizar tus notas de acuerdo a tus preferencias personales.
-
-- **Búsqueda:** Encuentra rápidamente las notas utilizando la función de búsqueda avanzada. Busca por título o fecha para acceder a la información que necesitas en segundos.
-
-- **Privacidad y Seguridad:** Todas tus notas son privadas y solo accesibles por ti. TagNote garantiza la seguridad de tus datos personales.
-
-- **Acceso desde Cualquier Lugar:** Puedes acceder a tus notas desde cualquier dispositivo con acceso a internet, lo que te permite mantener tu información sincronizada en todo momento.
-
-- **Interfaz Intuitiva:** Nuestra interfaz de usuario limpia y moderna te permite navegar y gestionar tus notas de manera fácil y rápida.
+WorkHub es la solución perfecta para equipos que buscan simplificar la colaboración y la gestión de tareas en un solo lugar. ¡Súmate a la ola y mejora la productividad de tu equipo con WorkHub!
