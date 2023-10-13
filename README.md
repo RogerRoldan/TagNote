@@ -2,7 +2,7 @@
 # WorkHub
 
 ## Descripción
-WorkHub es una aplicación de colaboración en grupo diseñada para simplificar la gestión de tareas y mejorar la comunicación entre miembros de equipos. Con TaskWave, los usuarios pueden crear grupos de trabajo, asignar tareas, y comunicarse a través de un chat grupal en tiempo real. La aplicación combina eficazmente la funcionalidad de un tablero de tareas con un chat grupal para proporcionar a los equipos una plataforma integral de colaboración.
+WorkHub es una aplicación de colaboración en grupo diseñada para simplificar la gestión de tareas y mejorar la comunicación entre miembros de equipos. Con WorkHub, los usuarios pueden crear grupos de trabajo, asignar tareas, y comunicarse a través de un chat grupal en tiempo real. La aplicación combina eficazmente la funcionalidad de un tablero de tareas con un chat grupal para proporcionar a los equipos una plataforma integral de colaboración.
 
 ## Características Clave
 - **Gestión de Grupos:** Los usuarios pueden crear y unirse a grupos de trabajo, asignar roles y colaborar de manera efectiva.
