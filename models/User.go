@@ -7,4 +7,5 @@ type User struct {
 	Email     string `gorm:"unique; not null"`
 	FirstName string `gorm:"not null"`
 	LastName  string `gorm:"not null"`
+	Imagen    []byte `gorm:"null"`
 }
