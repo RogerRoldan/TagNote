@@ -101,3 +101,22 @@ func UpdateTask(c *gin.Context) {
 	}
 	c.String(200, message)
 }
+
+func GetTasksByGroupId(c *gin.Context) {
+	database := infraestructure.GetConnection()
+
+	id := c.Param("id")
+	idInt, error := strconv.Atoi(id)
+	if error != nil {
+		c.String(400, "Bad request")
+		return
+	}
+
+	tasks, success := services.GetTasksByGroupId(database, idInt)
+
+	if success != true {
+		c.String(400, "Error")
+		return
+	}
+	c.JSON(200, tasks)
+}

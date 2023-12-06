@@ -43,7 +43,8 @@ func GetAdministradorId(db *gorm.DB, id int) (models.AdministratorGroup, bool) {
 func DeleteAdministrador(db *gorm.DB, id int) (string, bool) {
 	var administrador models.AdministratorGroup
 	db.First(&administrador, id)
-	if administrador == (models.AdministratorGroup{}) {
+	var aux models.AdministratorGroup = models.AdministratorGroup{}
+	if administrador.ID == (aux.ID) {
 		log.Println("Administrador no encontrado...")
 		return "Administrador no encontrado...", false
 	}
@@ -60,7 +61,8 @@ func DeleteAdministrador(db *gorm.DB, id int) (string, bool) {
 func UpdateAdministrador(db *gorm.DB, administrador models.AdministratorGroup) (string, bool) {
 	var administradorOld models.AdministratorGroup
 	db.First(&administradorOld, administrador.ID)
-	if administradorOld == (models.AdministratorGroup{}) {
+	var aux models.AdministratorGroup = models.AdministratorGroup{}
+	if administradorOld.ID == (aux.ID) {
 		log.Println("Administrador no encontrado...")
 		return "Administrador no encontrado...", false
 	}
