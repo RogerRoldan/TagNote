@@ -8,7 +8,7 @@ type User struct {
 	FirstName          string               `gorm:"not null" json:"first_name"`
 	LastName           string               `gorm:"not null" json:"last_name"`
 	Imagen             string               `gorm:"null" json:"imagen"`
-	TaskAssigned       []TaskAssigned       `gorm:"foreignKey:ID"`
-	GroupsUser         []GroupUser          `gorm:"foreignKey:ID"`
-	AdministratorGroup []AdministratorGroup `gorm:"foreignKey:ID"`
+	TaskAssigned       []TaskAssigned       `gorm:"foreignKey:ID" json:"task_assigned"`
+	GroupsUser         []GroupUser          `gorm:"foreignKey:ID" json:"groups_user"`
+	AdministratorGroup []AdministratorGroup `gorm:"foreignKey:ID" json:"administrator_group"`
 }

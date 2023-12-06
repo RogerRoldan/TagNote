@@ -1,9 +1,9 @@
 package models
 
 type Group struct {
-	ID                 uint                 `gorm:"primaryKey"`
-	Title              string               `gorm:"not null"`
-	Description        string               `gorm:"not null"`
-	GroupsUser         []GroupUser          `gorm:"foreignKey:ID"`
-	AdministratorGroup []AdministratorGroup `gorm:"foreignKey:ID"`
+	ID                 uint                 `gorm:"primaryKey" json:"id"`
+	Title              string               `gorm:"not null" json:"title"`
+	Description        string               `gorm:"not null" json:"description"`
+	GroupsUser         []GroupUser          `gorm:"foreignKey:ID" json:"groupsUser_id"`
+	AdministratorGroup []AdministratorGroup `gorm:"foreignKey:ID" json:"administratorGroup_id"`
 }
