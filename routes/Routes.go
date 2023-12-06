@@ -21,7 +21,6 @@ func Init() {
 	RoutesApiUser(router)
 	RoutesApiTask(router)
 	RoutesApiGroup(router)
-	RoutesAdministratorGroup(router)
 
 	//Start server
 	router.Run(":8085")
@@ -53,13 +52,4 @@ func RoutesApiGroup(e *gin.Engine) {
 	group.POST("/create", controllers.CreateGroup)
 	group.PUT("/update", controllers.UpdateGroup)
 	group.DELETE("/delete", controllers.DeleteGroup)
-}
-
-func RoutesAdministratorGroup(e *gin.Engine) {
-	group := e.Group("/api/administrator-group")
-	group.GET("/get-all", controllers.GetAdministratorGroups)
-	group.GET("/get/:id", controllers.GetAdministratorGroupById)
-	group.POST("/create", controllers.CreateAdministratorGroup)
-	group.PUT("/update", controllers.UpdateAdministratorGroup)
-	group.DELETE("/delete", controllers.DeleteAdministratorGroup)
 }
