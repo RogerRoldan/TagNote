@@ -42,8 +42,9 @@ func GetGroupId(db *gorm.DB, id int) (models.Group, bool) {
 
 func DeleteGroup(db *gorm.DB, id int) (string, bool) {
 	var group models.Group
+	var aux models.Group = models.Group{}
 	db.First(&group, id)
-	if group == (models.Group{}) {
+	if group.ID == (aux.ID) {
 		log.Println("Grupo no encontrado...")
 		return "Grupo no encontrado...", false
 	}

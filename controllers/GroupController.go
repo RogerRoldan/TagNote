@@ -54,8 +54,8 @@ func GetGroupById(c *gin.Context) {
 		c.String(400, "Error")
 		return
 	}
-
-	if group == (models.Group{}) {
+	var aux models.Group = models.Group{}
+	if group.ID == (aux.ID) {
 		c.String(404, "Group not found")
 		return
 	}

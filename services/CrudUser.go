@@ -1,9 +1,10 @@
 package services
 
 import (
+	"log"
+
 	"github.com/roger/workhub/models"
 	"gorm.io/gorm"
-	"log"
 )
 
 func GetUsers(db *gorm.DB) ([]models.User, bool) {
@@ -13,7 +14,7 @@ func GetUsers(db *gorm.DB) ([]models.User, bool) {
 		log.Println("Error al obtener los usuarios")
 		return []models.User{}, false
 	}
-	
+
 	log.Println("Usuarios encontrados exitosamente...")
 	return users, true
 }
@@ -42,8 +43,9 @@ func GetUserId(db *gorm.DB, id int) (models.User, bool) {
 
 func DeleteUser(db *gorm.DB, id int) (string, bool) {
 	var user models.User
+	var aux models.User = models.User{}
 	db.First(&user, id)
-	if user == (models.User{}) {
+	if user.ID == (aux.ID) {
 		log.Println("Usuario no encontrado...")
 		return "Usuario no encontrado...", false
 	}

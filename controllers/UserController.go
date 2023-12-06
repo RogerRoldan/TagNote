@@ -55,8 +55,8 @@ func GetUserById(c *gin.Context) {
 		c.String(400, "Error")
 		return
 	}
-
-	if user == (models.User{}) {
+	var aux models.User = models.User{}
+	if user.ID == (aux.ID) {
 		c.String(404, "User not found")
 		return
 	}

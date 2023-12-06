@@ -1,11 +1,12 @@
 package controllers
 
 import (
+	"strconv"
+
 	"github.com/gin-gonic/gin"
 	"github.com/roger/workhub/infraestructure"
 	"github.com/roger/workhub/models"
 	"github.com/roger/workhub/services"
-	"strconv"
 )
 
 func CreateTask(c *gin.Context) {
@@ -55,8 +56,8 @@ func GetTaskById(c *gin.Context) {
 		c.String(400, "Error")
 		return
 	}
-
-	if task == (models.Task{}) {
+	var aux models.Task = models.Task{}
+	if task.ID == (aux.ID) {
 		c.String(404, "Task not found")
 		return
 	}

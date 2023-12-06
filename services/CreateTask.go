@@ -1,9 +1,10 @@
 package services
 
 import (
+	"log"
+
 	"github.com/roger/workhub/models"
 	"gorm.io/gorm"
-	"log"
 )
 
 func CreateTask(db *gorm.DB, task models.Task) (string, bool) {
@@ -42,8 +43,9 @@ func GetTaskId(db *gorm.DB, id int) (models.Task, bool) {
 
 func DeleteTask(db *gorm.DB, id int) (string, bool) {
 	var task models.Task
+	var aux models.Task = models.Task{}
 	db.First(&task, id)
-	if task == (models.Task{}) {
+	if task.ID == (aux.ID) {
 		log.Println("Tarea no encontrada...")
 		return "Tarea no encontrada...", false
 	}
