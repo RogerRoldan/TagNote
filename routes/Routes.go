@@ -43,6 +43,7 @@ func RoutesApiTask(e *gin.Engine) {
 	task.POST("/create", controllers.CreateTask)
 	task.PUT("/update", controllers.UpdateTask)
 	task.DELETE("/delete", controllers.DeleteTask)
+	task.GET("/get-by-group/:id", controllers.GetTasksByGroupId)
 }
 
 func RoutesApiGroup(e *gin.Engine) {

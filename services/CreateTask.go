@@ -68,3 +68,15 @@ func UpdateTask(db *gorm.DB, task models.Task) (string, bool) {
 	log.Println("Tarea actualizada exitosamente...")
 	return "Tarea actualizada exitosamente...", true
 }
+
+func GetTasksByGroupId(db *gorm.DB, id int) ([]models.Task, bool) {
+	var tasks []models.Task
+	response := db.Where("group_id = ?", id).Find(&tasks)
+	if response.Error != nil {
+		log.Println("Error al obtener las tareas")
+		return []models.Task{}, false
+	}
+
+	log.Println("Tareas encontradas exitosamente...")
+	return tasks, true
+}

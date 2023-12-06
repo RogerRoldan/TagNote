@@ -54,8 +54,8 @@ func GetAdministratorGroupById(c *gin.Context) {
 		c.String(400, "Error")
 		return
 	}
-
-	if group == (models.AdministratorGroup{}) {
+	var aux models.AdministratorGroup = models.AdministratorGroup{}
+	if group.ID == (aux.ID) {
 		c.String(404, "Group not found")
 		return
 	}
