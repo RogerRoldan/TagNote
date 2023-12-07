@@ -20,6 +20,10 @@ func GetUsers(db *gorm.DB) ([]models.User, bool) {
 }
 
 func CreateUser(db *gorm.DB, user models.User) (string, bool) {
+
+	//hashear password
+	user.Password = Hash256(user.Password)
+
 	userCreate := db.Create(&user)
 	if userCreate.Error != nil {
 		log.Println("Error al crear el usuario")
