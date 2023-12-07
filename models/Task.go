@@ -1,10 +1,14 @@
 package models
 
+import "gorm.io/gorm"
+
 type Task struct {
-	ID           uint   `gorm:"primaryKey;autoIncrement:true" json:"id"`
-	Title        string `gorm:"not null" json:"title"`
-	Description  string `gorm:"not null" json:"description"`
-	State        string `gorm:"not null" json:"state"`
-	GroupID      uint   `gorm:"not null" json:"group_id"`
-	TaskAssigned []Task `gorm:"many2many:task_assigned" json:"task_assigned"`
+	gorm.Model
+	Title       string `gorm:"not null" json:"title"`
+	Description string `gorm:"not null" json:"description"`
+	State       string `gorm:"not null" json:"state"`
+	GroupID     uint   `gorm:"not null" json:"group_id"`
+	Group       Group  `gorm:"foreignKey:GroupID" json:"group"`
+	UserID      uint   `gorm:"not null" json:"user_id"`
+	User        User   `gorm:"foreignKey:UserID" json:"user"`
 }

@@ -1,10 +1,13 @@
 package models
 
+import "gorm.io/gorm"
+
 type Group struct {
-	ID                 uint   `gorm:"primaryKey;autoIncrement:true" json:"id"`
-	Title              string `gorm:"not null" json:"title"`
-	Description        string `gorm:"not null" json:"description"`
-	Task               []Task `gorm:"foreignKey:ID;gorm:constraint:OnUpdate:CASCADE,OnDelete:CASCADE;" json:"task"`
-	GroupsUser         []User `gorm:"many2many:group_user" json:"groups_user"`
-	AdministratorGroup []User `gorm:"many2many:administrator_group" json:"administrator_group"`
+	gorm.Model
+	Title       string  `gorm:"not null" json:"title"`
+	Description string  `gorm:"not null" json:"description"`
+	Task        []Task  `gorm:"foreignKey:GroupID;gorm:constraint:OnUpdate:CASCADE,OnDelete:CASCADE;" json:"task"`
+	GroupUser   []*User `gorm:"many2many:group_user" json:"groups_user"`
+	AdminID     uint    `gorm:"not null" json:"admin_id"`
+	Admin       User    `gorm:"foreignKey:AdminID" json:"admin"`
 }

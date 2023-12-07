@@ -7,7 +7,7 @@ import (
 )
 
 func CreateGroup(db *gorm.DB, group models.Group) (string, bool) {
-	groupCreate := db.Create(&group)
+	groupCreate := db.Create(&group).Association("GroupUser")
 	if groupCreate.Error != nil {
 		log.Println("Error al crear el grupo")
 		return "Error al crear el grupo", false
