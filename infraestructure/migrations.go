@@ -10,4 +10,5 @@ func Migrate() {
 	db.AutoMigrate(&models.User{})
 	db.AutoMigrate(&models.Group{})
 	db.AutoMigrate(&models.Task{})
+	db.AutoMigrate(&models.GroupUser{})
 }
