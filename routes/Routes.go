@@ -23,6 +23,7 @@ func Init() {
 	RoutesApiGroup(router)
 	RoutesApiGroupUser(router)
 	RouterApiAuth(router)
+	RouterApiTaskUser(router)
 
 	//Start server
 	router.Run(":8085")
@@ -70,4 +71,13 @@ func RoutesApiGroupUser(e *gin.Engine) {
 func RouterApiAuth(e *gin.Engine) {
 	auth := e.Group("/api/auth")
 	auth.POST("/login", controllers.Login)
+}
+
+func RouterApiTaskUser(e *gin.Engine) {
+	taskUser := e.Group("/api/task-user")
+	taskUser.GET("/get-all", controllers.GetTaskUsers)
+	taskUser.GET("/get/:id", controllers.GetTaskUserById)
+	taskUser.POST("/create", controllers.CreateTaskUser)
+	taskUser.PUT("/update", controllers.UpdateTaskUser)
+	taskUser.DELETE("/delete", controllers.DeleteTaskUser)
 }

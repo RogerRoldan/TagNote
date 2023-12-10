@@ -8,65 +8,38 @@ import (
 	"strconv"
 )
 
-func CreateGroupUser(c *gin.Context) {
+func CreateTaskUser(c *gin.Context) {
 	database := infraestructure.GetConnection()
 
-	var groupUser models.GroupUser
+	var taskUser models.TaskUser
 
-	err := c.BindJSON(&groupUser)
+	err := c.BindJSON(&taskUser)
 	if err != nil {
 		c.String(400, "Bad request")
 		return
 	}
 
-	groupUserNew, success := services.CreateGroupUser(database, groupUser)
+	taskUserNew, success := services.CreateTaskUser(database, &taskUser)
 	if success != true {
-		c.String(400, "Error al asignar grupo al usuario")
+		c.String(400, "Error al asignar tarea a usuario")
 		return
 	}
-	c.JSON(200, groupUserNew)
+	c.JSON(200, taskUserNew)
 }
 
-func GetGroupUsers(c *gin.Context) {
+func GetTaskUsers(c *gin.Context) {
 	database := infraestructure.GetConnection()
 
-	groupUsers, success := services.GetGroupUsers(database)
+	taskUser, success := services.GetTaskUser(database)
 
 	if success != true {
 		c.String(400, "Error")
 		return
 	}
-	c.JSON(200, groupUsers)
+	c.JSON(200, taskUser)
 }
 
-func GetGroupUserById(c *gin.Context) {
-	database := infraestructure.GetConnection()
-
-	id := c.Param("id")
-	idInt, error := strconv.Atoi(id)
-
-	if error != nil {
-		c.String(400, "Bad request")
-		return
-	}
-
-	var groupUser models.GroupUser
-	groupUser, success := services.GetGroupUserId(database, idInt)
-	if success != true {
-		c.String(400, "Error")
-		return
-	}
-
-	var aux models.GroupUser = models.GroupUser{}
-	if groupUser.ID == (aux.ID) {
-		c.String(400, "Error")
-		return
-	}
-
-	c.JSON(200, groupUser)
-}
-
-func DeleteGroupUser(c *gin.Context) {
+func GetTaskUserById(c *gin.Context) {
 	database := infraestructure.GetConnection()
 
 	id := c.Param("id")
@@ -77,15 +50,43 @@ func DeleteGroupUser(c *gin.Context) {
 		return
 	}
 
-	message, success := services.DeleteGroupUser(database, idInt)
+	var taskUser models.TaskUser
+	taskUser, success := services.GetTaskUserId(database, idInt)
 	if success != true {
 		c.String(400, "Error")
 		return
 	}
-	c.String(200, message)
+
+	var aux models.TaskUser = models.TaskUser{}
+	if taskUser.ID == aux.ID {
+		c.String(400, "Error")
+		return
+	}
+
+	c.JSON(200, taskUser)
 }
 
-func GetGroupUsersByUserId(c *gin.Context) {
+func DeleteTaskUser(c *gin.Context) {
+	database := infraestructure.GetConnection()
+
+	id := c.Param("id")
+	idInt, error := strconv.Atoi(id)
+
+	if error != nil {
+		c.String(400, "Bad request")
+		return
+	}
+
+	message, success := services.DeleteTaskUser(database, idInt)
+
+	if success != true {
+		c.String(400, "Error")
+		return
+	}
+	c.JSON(200, message)
+}
+
+func GetTaskUserByUserId(c *gin.Context) {
 	database := infraestructure.GetConnection()
 
 	id := c.Param("id")
@@ -95,16 +96,16 @@ func GetGroupUsersByUserId(c *gin.Context) {
 		return
 	}
 
-	groupUsers, success := services.GetGroupUsersByUserId(database, idInt)
+	taskUsers, success := services.GetTaskUserByUserId(database, idInt)
 
 	if success != true {
 		c.String(400, "Error")
 		return
 	}
-	c.JSON(200, groupUsers)
+	c.JSON(200, taskUsers)
 }
 
-func GetGroupUsersByGroupId(c *gin.Context) {
+func GetTaskUserByTaskId(c *gin.Context) {
 	database := infraestructure.GetConnection()
 
 	id := c.Param("id")
@@ -114,30 +115,30 @@ func GetGroupUsersByGroupId(c *gin.Context) {
 		return
 	}
 
-	groupUsers, success := services.GetGroupUsersByGroupId(database, idInt)
+	taskUsers, success := services.GetTaskUserByTaskId(database, idInt)
 
 	if success != true {
 		c.String(400, "Error")
 		return
 	}
-	c.JSON(200, groupUsers)
+	c.JSON(200, taskUsers)
 }
 
-func UpdateGroupUser(c *gin.Context) {
+func UpdateTaskUser(c *gin.Context) {
 	database := infraestructure.GetConnection()
 
-	var groupUser models.GroupUser
+	var taskUser models.TaskUser
 
-	err := c.BindJSON(&groupUser)
+	err := c.BindJSON(&taskUser)
 	if err != nil {
 		c.String(400, "Bad request")
 		return
 	}
 
-	message, success := services.UpdateGroupUser(database, groupUser)
+	message, success := services.UpdateTaskUser(database, &taskUser)
 	if success != true {
 		c.String(400, "Error")
 		return
 	}
-	c.String(200, message)
+	c.JSON(200, message)
 }

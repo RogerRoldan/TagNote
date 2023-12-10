@@ -7,6 +7,14 @@ import (
 )
 
 func CreateGroupUser(db *gorm.DB, groupUser models.GroupUser) (string, bool) {
+
+	//validate if tuple exists
+	groupUserExists := db.Where("group_id = ? AND user_id = ?", groupUser.GroupID, groupUser.UserID).Find(&models.GroupUser{})
+	if groupUserExists.RowsAffected > 0 {
+		log.Println("Grupo ya asignado a usuario")
+		return "Grupo ya asignado a usuario", false
+	}
+
 	groupUserCreate := db.Create(&groupUser)
 	if groupUserCreate.Error != nil {
 		log.Println("Error al crear el grupo")
