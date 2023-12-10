@@ -99,3 +99,21 @@ func UpdateGroup(c *gin.Context) {
 	}
 	c.String(200, message)
 }
+
+func GetGroupsByAdminId(c *gin.Context) {
+	database := infraestructure.GetConnection()
+
+	id := c.Param("id")
+	idInt, error := strconv.Atoi(id)
+	if error != nil {
+		c.String(400, "Bad request")
+		return
+	}
+
+	groups, success := services.GetGroupsByAdminId(database, idInt)
+	if success != true {
+		c.String(400, "Error al obtener los grupos")
+		return
+	}
+	c.JSON(200, groups)
+}

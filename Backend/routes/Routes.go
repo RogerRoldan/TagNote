@@ -10,12 +10,8 @@ func Init() {
 
 	router := gin.Default()
 
-	//add cors
-	config := cors.Config{
-		AllowOrigins: []string{"http://localhost:3000"},
-		AllowMethods: []string{"GET", "POST", "PUT", "DELETE"},
-		AllowHeaders: []string{"Origin", "Content-Type"},
-	}
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{"http://127.0.0.1:5500", "http://localhost:5500"}
 	router.Use(cors.New(config))
 
 	RoutesApiUser(router)
@@ -49,7 +45,6 @@ func RoutesApiTask(e *gin.Engine) {
 	task.POST("/create", controllers.CreateTask)
 	task.PUT("/update", controllers.UpdateTask)
 	task.DELETE("/delete", controllers.DeleteTask)
-	task.GET("/get-by-group/:id", controllers.GetTasksByGroupId)
 }
 
 func RoutesApiGroup(e *gin.Engine) {
@@ -59,6 +54,7 @@ func RoutesApiGroup(e *gin.Engine) {
 	group.POST("/create", controllers.CreateGroup)
 	group.PUT("/update", controllers.UpdateGroup)
 	group.DELETE("/delete", controllers.DeleteGroup)
+	group.GET("/get-by-admin/:id", controllers.GetGroupsByAdminId)
 }
 
 func RoutesApiGroupUser(e *gin.Engine) {

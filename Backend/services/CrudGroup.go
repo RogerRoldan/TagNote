@@ -67,3 +67,15 @@ func UpdateGroup(db *gorm.DB, group models.Group) (string, bool) {
 	log.Println("Grupo actualizado exitosamente...")
 	return "Grupo actualizado exitosamente...", true
 }
+
+func GetGroupsByAdminId(db *gorm.DB, id int) ([]models.Group, bool) {
+	var groups []models.Group
+	groupsList := db.Where("admin_id = ?", id).Find(&groups)
+	if groupsList.Error != nil {
+		log.Println("Error al obtener los grupos")
+		return []models.Group{}, false
+	}
+
+	log.Println("Grupos encontrados exitosamente...")
+	return groups, true
+}
