@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a067e5ac-80b9-4393-a257-e17bf987b7df" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Proyecto WorkHub.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/index-Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/index-Registrer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Styles/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Styles/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/styles.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/S6u8w4BMUTPHjxsAUi-qJCY.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/S6u8w4BMUTPHjxsAXC-q.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/S6u9w4BMUTPHh6UVSwaPGR_p.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/S6u9w4BMUTPHh6UVSwiPGQ.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/S6u_w4BMUTPHjxsI5wq_FQft1dw.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/S6u_w4BMUTPHjxsI5wq_Gwft.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/S6uyw4BMUTPHjx4wXg.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/S6uyw4BMUTPHjxAwXjeu.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/img-user1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/asignacion-de-tareas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/lista-tareas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/portfolio/trabajo-en-equipo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/script.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/GroupController.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/GroupUsersController.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/LoginController.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/TaskController.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/TaskUserController.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/UserController.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/asignacion-de-tareas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/img-user1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/lista-tareas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/trabajo-en-equipo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infraestructure/conectionDatabase.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infraestructure/migrations.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Group.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/GroupUser.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Login.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Task.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/TaskUser.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Routes.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/CrudGroup.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/CrudGroupUser.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/CrudTask.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/CrudTaskUser.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/CrudUser.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/Login.go" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../../../Program Files/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2Z2lFxP06v4C1EJVAvfEKtqVl5z" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="sortKey" value="BY_TIME_ASCENDING" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "C:/Users/Roger Roldan/Desktop/Personal/Unillanos/Go/Proyecto WorkHub/Backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Roger Roldan\Desktop\Personal\Unillanos\Go\Proyecto WorkHub\Servicios" />
+      <recent name="C:\Users\Roger Roldan\Desktop\Personal\Unillanos\Go\Proyecto WorkHub\services" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="go build github.com/roger/workhub" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="Proyecto WorkHub" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/roger/workhub" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/controllers/TaskController.go</url>
+          <line>12</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/services/CrudTaskUser.go</url>
+          <line>17</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
