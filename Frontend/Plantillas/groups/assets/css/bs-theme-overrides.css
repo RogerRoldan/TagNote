@@ -1,0 +1,9 @@
+:root, [data-bs-theme=light] {
+  --bs-body-bg: #ffffff;
+  --bs-body-bg-rgb: 255,255,255;
+  --bs-body-font-family: Montserrat, sans-serif;
+  --bs-link-color: #18BC9C;
+  --bs-link-color-rgb: 24,188,156;
+  --bs-link-decoration: line-through;
+}
+
