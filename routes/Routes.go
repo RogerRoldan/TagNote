@@ -25,8 +25,12 @@ func Init() {
 	RouterApiAuth(router)
 	RouterApiTaskUser(router)
 
-	//Start server
-	router.Run(":8085")
+	//Configurar el servidor para HTTPS
+	router.RunTLS(":8085", "cert.pem", "key.pem")
+
+	router.Run(":80")
+	router.RunTLS(":443", "cert.pem", "key.pem")
+
 }
 
 func RoutesApiUser(e *gin.Engine) {
