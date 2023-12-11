@@ -8,7 +8,7 @@ function createUser() {
         imagen: $("#image").val()
     };
 
-    fetch("http://localhost:8085/api/user/create", {
+    fetch("https://localhost:8085/api/user/create", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
