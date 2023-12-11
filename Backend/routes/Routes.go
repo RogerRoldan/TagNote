@@ -44,7 +44,7 @@ func RoutesApiTask(e *gin.Engine) {
 	task.GET("/get/:id", controllers.GetTaskById)
 	task.POST("/create", controllers.CreateTask)
 	task.PUT("/update", controllers.UpdateTask)
-	task.DELETE("/delete", controllers.DeleteTask)
+	task.DELETE("/delete/:id", controllers.DeleteTask)
 	task.GET("/get-by-group/:id", controllers.GetTasksByGroupId)
 }
 
