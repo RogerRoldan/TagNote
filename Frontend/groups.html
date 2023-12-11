@@ -100,7 +100,7 @@
         let arrayIdGroups = [];
 
         // Hacer la solicitud Fetch
-        fetch('http://localhost:8085/api/group/get-by-admin/' + idUser)
+        fetch('https://localhost:8085/api/group/get-by-admin/' + idUser)
             .then(response => response.json())
             .then(data => {
                 // Manipular el DOM y llenar la tabla

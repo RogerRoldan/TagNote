@@ -22,7 +22,7 @@ func Init() {
 	RouterApiTaskUser(router)
 
 	//Configurar el servidor para HTTPS
-	// router.RunTLS(":8085", "cert.pem", "key.pem")
+	router.RunTLS(":8085", "cert.pem", "key.pem")
 
 	router.Run(":8085")
 	router.RunTLS(":443", "cert.pem", "key.pem")
@@ -46,6 +46,7 @@ func RoutesApiTask(e *gin.Engine) {
 	task.PUT("/update", controllers.UpdateTask)
 	task.DELETE("/delete/:id", controllers.DeleteTask)
 	task.GET("/get-by-group/:id", controllers.GetTasksByGroupId)
+	task.GET("/get-by-user/:id", controllers.GetTaskUserByUserId)
 }
 
 func RoutesApiGroup(e *gin.Engine) {

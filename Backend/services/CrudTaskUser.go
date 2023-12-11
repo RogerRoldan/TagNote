@@ -68,7 +68,7 @@ func DeleteTaskUser(db *gorm.DB, id int) (string, bool) {
 
 func GetTaskUserByUserId(db *gorm.DB, id int) ([]models.TaskUser, bool) {
 	var taskUsers []models.TaskUser
-	taskUserList := db.Find(&models.TaskUser{}).Preload("User").Find(&taskUsers)
+	taskUserList := db.Where("user_id = ?", id).Find(&models.TaskUser{}).Preload("Task").Find(&taskUsers)
 	if taskUserList.Error != nil {
 		log.Println("Error al obtener las tareas")
 		return []models.TaskUser{}, false
