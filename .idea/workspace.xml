@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a067e5ac-80b9-4393-a257-e17bf987b7df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/credentials.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/Scripts/tareas-asignadas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/forbidden.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/group-task-user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/my-groups.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/my-task.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/infraestructure/conectionDatabase.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/infraestructure/conectionDatabase.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/routes/Routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/routes/Routes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/services/CrudGroupUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/CrudGroupUser.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/Scripts/index-Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/Scripts/index-Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/groups.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/groups.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/task.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +58,7 @@
     "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Merging master",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "last_opened_file_path": "C:/Users/PC/Desktop/Santiago/GO/Workhub",
