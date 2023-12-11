@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>Grupos</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&amp;display=swap">
@@ -23,10 +23,10 @@
             <div id="fecha-actual"></div>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">PortAfolio</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#nosotros">Nosotros</a></li>
-                    <li class="nav-item mx-0 mx-lg-0 py-2"><a class="nav-link portfolio-item" href="#modal-Registrer" data-bs-toggle="modal">Registrarse</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><button class="btn btn-primary py-3 px-0 px-lg-3 rounded" data-bs-toggle="modal" role="Button">INICIAR SESIÓN</button></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="my-task.html">Mis Tareas</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="groups.html">Grupos Administrados</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/Frontend/my-groups.html">Mis Grupos</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><button class="btn btn-primary py-3 px-0 px-lg-3 rounded" onclick="confirmSignOut()" role="Button">SALIR</button></li>
                 </ul>
             </div>
         </div>
@@ -100,7 +100,7 @@
         let arrayIdGroups = [];
 
         // Hacer la solicitud Fetch
-        fetch('https://localhost:8085/api/group/get-by-admin/' + idUser)
+        fetch("https://localhost:8085/api/group/get-by-admin/" + idUser)
             .then(response => response.json())
             .then(data => {
                 // Manipular el DOM y llenar la tabla
@@ -177,11 +177,6 @@
         }
 
         function updateTable() {
-        // Aquí puedes realizar la lógica necesaria para volver a cargar la información en la tabla
-        // Por ejemplo, volver a realizar la solicitud Fetch y actualizar la tabla con los nuevos datos
-        // ...
-
-        // En este ejemplo, simplemente recargamos la página después de un breve retraso
         setTimeout(() => {
             window.location.reload();
         }, 1000);
@@ -264,7 +259,7 @@
             const idUserInt = parseInt(idUser);
 
             // Hacer la solicitud Fetch para crear el grupo
-            fetch(`https://localhost:8085/api/group/create`, {
+            fetch("http://localhost:8085/api/group/create", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -367,6 +362,7 @@
         }   
 
     </script>
+    <script src="Scripts/sign-out.js"></script>
 </body>
 
 </html>

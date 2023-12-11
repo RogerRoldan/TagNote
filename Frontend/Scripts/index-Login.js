@@ -18,7 +18,7 @@ function Login() {
         password: $("#password-login").val(),
     };
 
-    fetch("http://localhost:8085/api/auth/login", {
+    fetch("https://localhost:8085/api/auth/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -40,3 +40,15 @@ function Login() {
         $("#form-modal-login").html("Error al iniciar sesión. " + error.message);
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    var registerLink = document.getElementById("login-button-registrer");
+
+    registerLink.addEventListener("click", function (event) {
+      $('#modal-Login').modal('hide');
+      
+      $('#modal-Register').modal('show');
+
+      event.preventDefault();
+    });
+  });
