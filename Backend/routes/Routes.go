@@ -22,9 +22,9 @@ func Init() {
 	RouterApiTaskUser(router)
 
 	//Configurar el servidor para HTTPS
-	router.RunTLS(":8085", "cert.pem", "key.pem")
+	// router.RunTLS(":8085", "cert.pem", "key.pem")
 
-	router.Run(":80")
+	router.Run(":8085")
 	router.RunTLS(":443", "cert.pem", "key.pem")
 
 }

@@ -18,7 +18,7 @@ function Login() {
         password: $("#password-login").val(),
     };
 
-    fetch("https://localhost:8085/api/auth/login", {
+    fetch("http://localhost:8085/api/auth/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -32,8 +32,9 @@ function Login() {
         return response.json();
     })
     .then(data => {
-        $("#form-modal-login").html("Ha iniciado sesión exitosamente." + data.id);
+        $("#form-modal-login").html("Ha iniciado sesión exitosamente.");
         localStorage.setItem('idUser', data.id);
+        window.location.href = 'groups.html';
     })
     .catch(error => {
         $("#form-modal-login").html("Error al iniciar sesión. " + error.message);

@@ -20,6 +20,7 @@
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
     <nav class="navbar navbar-expand-lg fixed-top bg-secondary text-uppercase navbar-light" id="mainNav" style="position: static;">
         <div class="container"><a class="navbar-brand" href="#page-top"><img id="logo" hred="log" src="assets/img/logo.png" width="130" height="100"></a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white bg-primary navbar-toggler-right text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div id="fecha-actual"></div>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">PortAfolio</a></li>
@@ -99,7 +100,7 @@
         let arrayIdGroups = [];
 
         // Hacer la solicitud Fetch
-        fetch('https://localhost:8085/api/group/get-by-admin/' + idUser)
+        fetch('http://localhost:8085/api/group/get-by-admin/' + idUser)
             .then(response => response.json())
             .then(data => {
                 // Manipular el DOM y llenar la tabla
@@ -281,7 +282,12 @@
             })
             .catch(error => console.error('Error fetching data:', error));
         }
+        var fechaActual = new Date();
 
+        var opcionesDeFormato = { weekday: 'long', day: 'numeric' , month: 'long', year: 'numeric'};
+        var fechaFormateada = fechaActual.toLocaleDateString('es-ES', opcionesDeFormato);
+
+        document.getElementById('fecha-actual').textContent = fechaFormateada;
     </script>
 </body>
 
