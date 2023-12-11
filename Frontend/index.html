@@ -16,13 +16,8 @@
             <div id="fecha-actual"></div>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-<<<<<<< HEAD
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="groups.html">Grupos</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">PortAfolio</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#nosotros">Nosotros</a></li>
-=======
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/groups.html">Grupos Administrados</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/my-groups.html">Mis Grupos</a></li>
->>>>>>> 3e43b602cf2720ebbca9ad454f11e9d32f80fd9d
                     <li class="nav-item mx-0 mx-lg-0 py-2"><a class="nav-link portfolio-item" href="#modal-Registrer" data-bs-toggle="modal">Registrarse</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><button class="btn btn-primary py-3 px-0 px-lg-3 rounded" id="openModalButton" data-bs-toggle="modal" role="Button">INICIAR SESIÓN</button></li>
                 </ul>
@@ -73,7 +68,7 @@
             <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
                 <div class="col">
                     <div class="card border-0 shadow-none">
-                        <div class="card-body d-flex align-items-center p-0"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="130" height="130" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                        <div class="card-body d-flex align-items-center p-0"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="130" height="130" src="/Frontend/images/83370788.png">
                             <div>
                                 <h5 class="fw-bold text-primary mb-0">Hernan Quijano</h5>
                                 <p class="text-muted mb-1">Est. Ingeniería de sistemas</p>
@@ -95,7 +90,7 @@
                 </div>
                 <div class="col">
                     <div class="card border-0 shadow-none">
-                        <div class="card-body d-flex align-items-center p-0"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="130" height="130" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                        <div class="card-body d-flex align-items-center p-0"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="130" height="130" src="/Frontend/images/roger.jpeg">
                             <div>
                                 <h5 class="fw-bold text-primary mb-0">Roger Roldan</h5>
                                 <p class="text-muted mb-1">Est. Ingeniería de sistemas</p>
@@ -117,7 +112,7 @@
                 </div>
                 <div class="col">
                     <div class="card border-0 shadow-none">
-                        <div class="card-body d-flex align-items-center p-0"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="130" height="130" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
+                        <div class="card-body d-flex align-items-center p-0"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="130" height="130" src="/Frontend/images/sanson.jpg">
                             <div>
                                 <h5 class="fw-bold text-primary mb-0">Santiago Martinez</h5>
                                 <p class="text-muted mb-1">Est. Ingeniería de sistemas</p>
@@ -242,7 +237,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer pb-5 btn-close"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Cerrar</a></div>
+                <div class="modal-footer pb-5 "><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal" onclick="closeModal()"><i class="fa fa-close"></i>&nbsp;Cerrar</a></div>
             </div>
         </div>
     </div>
@@ -265,7 +260,7 @@
                                             <div class="mb-3"><input class="form-control" type="email" name="email" id="email-login" placeholder="Correo"></div>
                                             <div class="mb-3"><input class="form-control" type="password" name="password"  id="password-login" placeholder="Contraseña"></div>
                                             <div class="mb-3"><button class="btn btn-primary d-block w-100" type="button" onclick="Login()">Iniciar</button></div>
-                                            <p class="text-muted" style="margin-bottom: 0px;">¿No tiene cuenta?</p><a href="#modal-Registrer" class="portfolio-modal-dismiss" data-bs-dismiss="modal" data-bs-toggle="modal">Registrarse</a>
+                                            <p class="text-muted" style="margin-bottom: 0px;">¿No tiene cuenta?</p><a href="#" id="login-button-registrer" class="portfolio-modal-dismiss" data-bs-dismiss="modal" >Registrarse</a>
                                         </form>
                                     </div>
                                 </div>
