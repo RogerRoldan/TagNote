@@ -65,7 +65,7 @@ func RoutesApiGroupUser(e *gin.Engine) {
 	group.GET("/get/:id", controllers.GetGroupUserById)
 	group.POST("/create", controllers.CreateGroupUser)
 	group.PUT("/update", controllers.UpdateGroupUser)
-	group.DELETE("/delete", controllers.DeleteGroupUser)
+	group.DELETE("/delete/:id", controllers.DeleteGroupUser)
 	group.GET("/get-by-user/:id", controllers.GetGroupUsersByUserId)
 	group.GET("/get-by-group/:id", controllers.GetGroupUsersByGroupId)
 }
@@ -82,4 +82,5 @@ func RouterApiTaskUser(e *gin.Engine) {
 	taskUser.POST("/create", controllers.CreateTaskUser)
 	taskUser.PUT("/update", controllers.UpdateTaskUser)
 	taskUser.DELETE("/delete", controllers.DeleteTaskUser)
+	taskUser.GET("/get-by-task/:id", controllers.GetTaskUserByTaskId)
 }

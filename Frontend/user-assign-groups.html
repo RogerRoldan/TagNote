@@ -35,23 +35,19 @@
     <br>
         
     <h1 class="text-center">
-        Mis tareas en el grupo:
+        Usuarios del Grupo: 
         <span  id="title" style="color: rgb(238,153,27);">
         </span></h1>
     <br>
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <button class="btn btn-primary" type="button" style="margin: 0px;margin-left: 5px;background: rgb(2, 117, 216);" data-bs-toggle="modal" data-bs-target="#modal-Create" onclick="showCreateModal()">Crear Tarea</button>
-            </div>
-        </div>
+
         <div class="table-responsive" id="table-container">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Titulo</th>
-                        <th>Descripción</th>
-                        <th>Estado</th>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -118,7 +114,7 @@
         var idUser = localStorage.getItem('idUser');
 
         //validar parametro id_group esta en el localstorage en el array de grupos arrayIdGroups
-        var arrayIdGroups = localStorage.getItem('arrayIdMyGroups');
+        var arrayIdGroups = localStorage.getItem('arrayIdGroups');
         var arrayIdGroupsParsed = JSON.parse(arrayIdGroups);
 
         var idGroupInt = parseInt(idGroup);
@@ -132,7 +128,7 @@
 
 
         // Hacer la solicitud Fetch
-        fetch('https://localhost:8085/api/task/get-by-user/' + idUser )
+        fetch('https://localhost:8085/api/group-user/get-by-group/' + idGroup)
             .then(response => response.json())
             .then(data => {
                 // Manipular el DOM y llenar la tabla
@@ -142,32 +138,31 @@
                 console.log(data.length);
                 if (data.length == 0) {
                     const containerTable = document.getElementById('table-container');
-                    containerTable.innerHTML = '<h3 class="text-center">No hay tareas en este grupo</h3>';
+                    containerTable.innerHTML = '<h3 class="text-center">No hay usuarios en este grupo</h3>';
 
 
                 }else{
-                    data.forEach(task => {
+                    data.forEach(user => {
                         const row = document.createElement('tr');
     
-                        const titleCell = document.createElement('td');
-                        titleCell.textContent = task.task.title;
-    
-                        const descriptionCell = document.createElement('td');
-                        descriptionCell.textContent = task.task.description;
+                        const idCell = document.createElement('td');
+                        idCell.textContent = user.user.id;
 
-                        const statusCell = document.createElement('td');
-                        statusCell.textContent = task.task.state;
+                        const fullnameCell = document.createElement('td');
+                        fullnameCell.textContent = user.user.first_name + ' ' + user.user.last_name;
+
+                        const emailCell = document.createElement('td');
+                        emailCell.textContent = user.user.email;
     
                         const actionsCell = document.createElement('td');
                         actionsCell.innerHTML = `
-                            <a class="btn btn-primary" role="button" style="margin: 0px;margin-left: 5px;background: rgb(2, 117, 216);" href="user-assign-task.html?id_task=${task.task.ID}&name_task=${task.task.title}">Ver asignados</a>
-                            <button class="btn btn-primary" type="button" style="margin: 0px;margin-left: 5px;background: rgb(238,153,27);" onclick="showEditModal(${task.task.ID}, '${task.task.title}', '${task.task.description}', ${task.task.group_id})">Editar</button>
-                            <button class="btn btn-primary" type="button" style="margin: 0px; margin-left: 5px; background: rgb(194, 51, 51);" onclick="confirmDelete(${task.task.ID})">Eliminar</button>
+                            <button class="btn btn-primary" type="button" style="margin: 0px; margin-left: 5px; background: rgb(194, 51, 51);" onclick="confirmDelete(${user.ID})">Eliminar</button>
+                            
                         `;
     
-                        row.appendChild(titleCell);
-                        row.appendChild(descriptionCell);
-                        row.appendChild(statusCell);
+                        row.appendChild(idCell);
+                        row.appendChild(fullnameCell);
+                        row.appendChild(emailCell);
                         row.appendChild(actionsCell);
     
                         tableBody.appendChild(row);
@@ -180,45 +175,51 @@
 
     </script>
     <script>
-        function confirmDelete(taskId) {
-            Swal.fire({
+        function confirmDelete(user_id_group) {
+            swal.fire({
                 title: '¿Estás seguro?',
-                text: "No podrás revertir esta acción",
+                text: 'El usuario será eliminado del grupo',
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#3085d6',
-                confirmButtonText: 'Eliminar',
+                confirmButtonText: 'Sí, eliminar',
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // Si se confirma, hacer la solicitud Fetch para eliminar el grupo
-                    deleteTask(taskId);
+                    deleteUserTaskGroup(user_id_group);
                 }
             });
         }
     
-        function deleteTask(taskId) {
-            // Hacer la solicitud Fetch para eliminar el grupo
-            fetch(`https://localhost:8085/api/task/delete/${taskId}`, {
-                method: 'DELETE',
-            })
-            .then(response => {
+        function deleteUserTaskGroup(id_user_group) {
+            fetch('https://localhost:8085/api/group-user/delete/' + id_user_group, {
+                method: 'DELETE'
+            }).then(response => {
                 if (response.ok) {
-                    // Eliminación exitosa, recargar la página o actualizar la tabla
-                    updateTable();
-                } else {
-                    console.error('Error al intentar eliminar el grupo');
-                    //sweet alert2 con error
                     swal.fire({
-                        title: 'Error!',
-                        text: 'No se pudo eliminar la tarea',
+                        title: '¡Eliminado!',
+                        text: 'El usuario ha sido eliminado del grupo',
+                        icon: 'success',
+                        confirmButtonText: 'Aceptar'
+                    }).then(() => {
+                        updateTable();
+                    });
+                } else {
+                    swal.fire({
+                        title: 'Error',
+                        text: 'No se pudo eliminar el usuario del grupo',
                         icon: 'error',
-                        confirmButtonText: 'Ok'
-                    })
+                        confirmButtonText: 'Aceptar'
+                    });
                 }
-            })
-            .catch(error => console.error('Error fetching data:', error));
+            }).catch(error => {
+                console.error('Error deleting user from group:', error);
+                swal.fire({
+                    title: 'Error',
+                    text: 'No se pudo eliminar el usuario del grupo',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+            });
         }
 
         function updateTable() {
@@ -232,137 +233,76 @@
         }, 100);
     }
     </script>
-
     <script>
-        function showEditModal(taskId, taskTitle, taskDescription, state) {
-            Swal.fire({
-                title: 'Editar Tarea',
-                html:
-                    `<div
-                        style="display: flex; flex-direction: column; justify-content: center; align-items: center;"
-                    >` +
-                    `<input id="editTitle" class="swal2-input" value="${taskTitle}">` +
-                    `<textarea id="editDescription" class="swal2-textarea">${taskDescription}</textarea>` +
-                    `<select id="editState" class="swal2-select" style="display: block;">` +
-                        `<option value="Pendiente" ${state == 'Pendiente' ? 'selected' : ''}>Pendiente</option>` +
-                        `<option value="En Progreso" ${state == 'En Progreso' ? 'selected' : ''}>En Progreso</option>` +
-                        `<option value="Terminada" ${state == 'Terminada' ? 'selected' : ''}>Terminada</option>` +
-                    `</select>`+
-                    `</div>`,
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Actualizar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Si se confirma, hacer la solicitud Fetch para actualizar el grupo
-                    const editTitle = document.getElementById('editTitle').value;
-                    const editDescription = document.getElementById('editDescription').value;
-                    const editState = document.getElementById('editState').value;
-                    const groupId = parseInt(idGroup);
-                    updateTask(taskId, editTitle, editDescription, groupId);
-                }
-            });
+        function showAssigneUserGroupModal(groupId) {
+            //traer todos los usuarios
+            fetch('https://localhost:8085/api/user/get-all')
+                .then(response => response.json())
+                .then(data => {
+                    // Manipular el DOM y llenar la tabla
+                    //lista de usuarios
+                    let arrayUsers = [];
+                    data.forEach(user => {
+                        arrayUsers.push({
+                            id: user.id,
+                            fullname: user.first_name + ' ' + user.last_name
+                        });
+                    });
+                    Swal.fire({
+                        title: 'Asignar Usuario a Grupo',
+                        html:
+                            `<select id="assigneUserGroup" class="swal2-input">` +
+                            `<option value="" disabled selected>Selecciona un usuario</option>` +
+                            arrayUsers.map(user => `<option value="${user.id}">${user.fullname}</option>`) +
+                            `</select>`,
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Asignar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Si se confirma, hacer la solicitud Fetch para asignar el usuario al grupo
+                            const assigneUserGroup = document.getElementById('assigneUserGroup').value;
+                            assigneUserToGroup(assigneUserGroup, groupId);
+                        }
+                    });
+
+                })
+            .catch(error => console.error('Error fetching data:', error));         
+
         }
 
-        function updateTask(taskId, editTitle, editDescription, groupId) {
-            // Hacer la solicitud Fetch para actualizar el grupo
-            fetch(`https://localhost:8085/api/task/update`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    id: taskId,
-                    title: editTitle,
-                    description: editDescription,
-                    state: document.getElementById('editState').value,
-                    group_id: groupId
-                }),
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Actualización exitosa, recargar la página o actualizar la tabla
-                    updateTable();
-                } else {
-                    console.error('Error al intentar actualizar el grupo');
-                    swal.fire({
-                        title: 'Error!',
-                        text: 'No se pudo actualizar la tarea',
-                        icon: 'error',
-                        confirmButtonText: 'Ok'
-                    })
-                }
-            })
-            .catch(error => console.error('Error fetching data:', error));
-        }
-    </script>
-
-    <script>
-
-        function showCreateModal() {
-            Swal.fire({
-                title: 'Crear Tarea',
-                html:
-                    `<div
-                        style="display: flex; flex-direction: column; justify-content: center; align-items: center;"
-                    >` +
-                    `<input id="createTitle" class="swal2-input" placeholder="Titulo">` +
-                    `<textarea id="createDescription" class="swal2-textarea" placeholder="Descripción"></textarea>` +
-                    `<select id="createState" class="swal2-select" style="display: block;">` +
-                        `<option value="Pendiente">Pendiente</option>` +
-                        `<option value="En Progreso">En Progreso</option>` +
-                        `<option value="Terminada">Terminada</option>` +
-                    `</select>`+
-                    `</div>`,
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Crear'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Si se confirma, hacer la solicitud Fetch para crear el grupo
-                    const createTitle = document.getElementById('createTitle').value;
-                    const createDescription = document.getElementById('createDescription').value;
-                    const createState = document.getElementById('createState').value;
-                    const groupId = parseInt(idGroup);
-                    createGroup(createTitle, createDescription, createState, groupId);
-                }
-            });
-        }
-
-        function createGroup(createTitle, createDescription, createState, groupId) {
-            // Hacer la solicitud Fetch para crear el grupo
-            fetch(`https://localhost:8085/api/task/create`, {
+        function assigneUserToGroup(assigneUserGroup, assigneGroup) {
+            // Hacer la solicitud Fetch para asignar el usuario al grupo
+            assigneUserGroup = parseInt(assigneUserGroup);
+            fetch(`https://localhost:8085/api/group-user/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    title: createTitle,
-                    description: createDescription,
-                    state: createState,
-                    group_id: groupId
+                    user_id: assigneUserGroup,
+                    group_id: assigneGroup
                 }),
             })
             .then(response => {
                 if (response.ok) {
-                    // Creación exitosa, recargar la página o actualizar la tabla
+                    // Asignación exitosa, recargar la página o actualizar la tabla
                     updateTable();
                 } else {
-                    console.error('Error al intentar crear el grupo');
-                    swal.fire({
-                        title: 'Error!',
-                        text: 'No se pudo crear la tarea',
+                    console.error('Error al intentar asignar el usuario al grupo');
+                    Swal.fire({
                         icon: 'error',
-                        confirmButtonText: 'Ok'
-                    })
+                        title: 'Oops...',
+                        text: 'Error al intentar asignar el usuario al grupo',
+                    });
                 }
             })
             .catch(error => console.error('Error fetching data:', error));
-        }
+        }   
 
     </script>
+    
 </body>
 
 </html>

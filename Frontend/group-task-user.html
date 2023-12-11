@@ -160,6 +160,7 @@
     
                         const actionsCell = document.createElement('td');
                         actionsCell.innerHTML = `
+                            <a class="btn btn-primary" role="button" style="margin: 0px;margin-left: 5px;background: rgb(2, 117, 216);" href="user-assign-task.html?id_task=${task.ID}&name_task=${task.title}">Ver asignados</a>
                             <button class="btn btn-primary" type="button" style="margin: 0px;margin-left: 5px;background: rgb(238,153,27);" onclick="showEditModal(${task.ID}, '${task.title}', '${task.description}', ${task.group_id})">Editar</button>
                             <button class="btn btn-primary" type="button" style="margin: 0px; margin-left: 5px; background: rgb(194, 51, 51);" onclick="confirmDelete(${task.ID})">Eliminar</button>
                         `;
