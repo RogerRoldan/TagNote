@@ -33,7 +33,11 @@
     <div class="container"></div>
     <br>
     <br>
-    <h1 class="text-center">Mis Tareas</h1>
+        
+    <h1 class="text-center">
+        Tareas del grupo: 
+        <span  id="title" style="color: rgb(238,153,27);">
+        </span></h1>
     <br>
     <div class="container">
         <div class="row">
@@ -105,6 +109,11 @@
         }
 
         var idGroup = getParameterByName('id_group');
+        var title = getParameterByName('name_group');
+
+        // Llenar el título de la página
+        const titleElement = document.getElementById('title');
+        titleElement.textContent = title;
 
         var idUser = localStorage.getItem('idUser');
 
@@ -199,6 +208,13 @@
                     updateTable();
                 } else {
                     console.error('Error al intentar eliminar el grupo');
+                    //sweet alert2 con error
+                    swal.fire({
+                        title: 'Error!',
+                        text: 'No se pudo eliminar la tarea',
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    })
                 }
             })
             .catch(error => console.error('Error fetching data:', error));
@@ -269,6 +285,12 @@
                     updateTable();
                 } else {
                     console.error('Error al intentar actualizar el grupo');
+                    swal.fire({
+                        title: 'Error!',
+                        text: 'No se pudo actualizar la tarea',
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    })
                 }
             })
             .catch(error => console.error('Error fetching data:', error));
@@ -328,6 +350,12 @@
                     updateTable();
                 } else {
                     console.error('Error al intentar crear el grupo');
+                    swal.fire({
+                        title: 'Error!',
+                        text: 'No se pudo crear la tarea',
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    })
                 }
             })
             .catch(error => console.error('Error fetching data:', error));

@@ -33,13 +33,10 @@
     <div class="container"></div>
     <br>
     <br>
-    <h1 class="text-center">Grupos Administrados</h1>
+    <h1 class="text-center">Grupos a los que pertenezco</h1>
     <br>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <button class="btn btn-primary" type="button" style="margin: 0px;margin-left: 5px;background: rgb(2, 117, 216);" data-bs-toggle="modal" data-bs-target="#modal-Create" onclick="showCreateModal()">Crear Grupo</button>
-            </div>
         </div>
         <div class="table-responsive">
             <table class="table">
@@ -99,7 +96,7 @@
         let arrayIdGroups = [];
 
         // Hacer la solicitud Fetch
-        fetch('https://localhost:8085/api/group/get-by-admin/' + idUser)
+        fetch('https://localhost:8085/api/group-user/get-by-user/' + idUser)
             .then(response => response.json())
             .then(data => {
                 // Manipular el DOM y llenar la tabla
@@ -107,22 +104,20 @@
 
                 data.forEach(group => {
 
-                    arrayIdGroups.push(group.ID);
+                    arrayIdGroups.push(group.group.ID);
 
                     const row = document.createElement('tr');
 
                     const titleCell = document.createElement('td');
-                    titleCell.textContent = group.title;
+                    titleCell.textContent = group.group.title;
 
                     const descriptionCell = document.createElement('td');
-                    descriptionCell.textContent = group.description;
+                    descriptionCell.textContent = group.group.description;
 
                     const actionsCell = document.createElement('td');
                     actionsCell.innerHTML = `
-                        <a class="btn btn-primary" type="button" style="margin: 0px;background: rgb(2, 117, 216);" href="task.html?id_group=${group.ID}?name_group=${group.title}">Ver tareas</a>
-                        <button class="btn btn-primary" type="button" style="margin: 0px;margin-left: 5px;background: rgb(238,153,27);" onclick="showEditModal(${group.ID}, '${group.title}', '${group.description}', ${group.admin_id})">Editar</button>
-                        <button class="btn btn-primary" type="button" style="margin: 0px; margin-left: 5px; background: rgb(194, 51, 51);" onclick="confirmDelete(${group.ID})">Eliminar</button>
-                        <button class="btn btn-primary" type="button" style="margin: 0px; margin-left: 5px; background: rgb(6, 176, 45);" onclick="showAssigneUserGroupModal(${group.ID})">Asignar Usuario</button>
+                        <a class="btn btn-primary" type="button" style="margin: 0px;background: rgb(2, 117, 216);" href="group-task-user.html?id_group=${group.group.ID}?name_group=${group.group.title}">Ver tareas del grupo</a>
+                        <a class="btn btn-primary" type="button" style="margin: 0px;background: rgb(238,153,2);" href="my-task.html?id_group=${group.group.ID}?name_group=${group.group.title}">Ver mis tareas asignadas</a>
                     `;
 
                     row.appendChild(titleCell);
@@ -133,7 +128,7 @@
                 });
 
                 // Llenar el localStorage con los ids de los grupos
-                localStorage.setItem('arrayIdGroups', JSON.stringify(arrayIdGroups));
+                localStorage.setItem('arrayIdMyGroups', JSON.stringify(arrayIdGroups));
 
             })
             .catch(error => console.error('Error fetching data:', error));

@@ -68,7 +68,7 @@ func DeleteGroupUser(db *gorm.DB, id int) (string, bool) {
 
 func GetGroupUsersByUserId(db *gorm.DB, id int) ([]models.GroupUser, bool) {
 	var groupUsers []models.GroupUser
-	groupUsersList := db.Where("user_id = ?", id).Find(&models.GroupUser{}).Preload("User").Find(&groupUsers)
+	groupUsersList := db.Where("user_id = ?", id).Find(&models.GroupUser{}).Preload("Group").Find(&groupUsers)
 	if groupUsersList.Error != nil {
 		log.Println("Error al obtener los grupos")
 		return []models.GroupUser{}, false
