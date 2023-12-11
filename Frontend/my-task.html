@@ -128,7 +128,7 @@
 
 
         // Hacer la solicitud Fetch
-        fetch('https://localhost:8085/api/task/get-by-group/' + idGroup)
+        fetch('https://localhost:8085/api/task/get-by-user/' + idUser )
             .then(response => response.json())
             .then(data => {
                 // Manipular el DOM y llenar la tabla
