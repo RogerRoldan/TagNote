@@ -19,7 +19,7 @@ func CreateTask(db *gorm.DB, task models.Task) (string, bool) {
 
 func GetTasks(db *gorm.DB) ([]models.Task, bool) {
 	var tasks []models.Task
-	tasksList := db.Find(&models.Task{}).Preload("User").Find(&tasks)
+	tasksList := db.Find(&tasks)
 	if tasksList.Error != nil {
 		log.Println("Error al obtener las tareas")
 		return []models.Task{}, false
@@ -71,7 +71,7 @@ func UpdateTask(db *gorm.DB, task models.Task) (string, bool) {
 
 func GetTasksByGroupId(db *gorm.DB, id int) ([]models.Task, bool) {
 	var tasks []models.Task
-	response := db.Preload("Group").Where("group_id = ?", id).Find(&tasks)
+	response := db.Where("group_id = ?", id).Find(&tasks)
 	if response.Error != nil {
 		log.Println("Error al obtener las tareas")
 		return []models.Task{}, false
