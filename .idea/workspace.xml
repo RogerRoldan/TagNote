@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a067e5ac-80b9-4393-a257-e17bf987b7df" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Backend/credentials.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/infraestructure/conectionDatabase.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/infraestructure/conectionDatabase.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/routes/Routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/routes/Routes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/services/CrudTask.go" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/CrudTask.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +21,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../../../Program Files/Go" />
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../../Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -52,14 +51,17 @@
     "git-widget-placeholder": "master",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/PC",
+    "last_opened_file_path": "C:/Users/PC/Desktop/Santiago/GO/Workhub",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Desktop\Santiago\GO\Workhub\Backend" />
+      <recent name="C:\Users\PC\Desktop\Santiago\GO\Workhub\Backend\infraestructure" />
       <recent name="C:\Users\Roger Roldan\Desktop\Personal\Unillanos\Go\Proyecto WorkHub\Servicios" />
       <recent name="C:\Users\Roger Roldan\Desktop\Personal\Unillanos\Go\Proyecto WorkHub\services" />
     </key>
@@ -108,5 +110,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GoApplicationRunConfiguration">
+        <watch expression="*(*&quot;github.com/roger/workhub/infraestructure.Config&quot;)(824635575808)" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
